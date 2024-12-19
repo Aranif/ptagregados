@@ -6,3 +6,8 @@ It has endless uses. In this case a simple list has been used, but there are: Ci
 The structures will allow us to create variables with fields that we can modify at run time.
 
 Note: You must install "make" in Ubuntu, if you don have it.
+
+```bash
+sudo apt-get update
+sudo apt-get install make
+
