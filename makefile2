@@ -1,0 +1,22 @@
+#Makefile para la practica 7
+
+#Para compilar
+CC = gcc -g 
+CFLAGS =  -Wall -Wextra 
+
+#Para Coches
+coches: cochesDatos.o cochesPrincipal.o
+	$(CC) $(CFLAGS) -o coches cochesDatos.o cochesPrincipal.o
+
+cochesPrincipal.o: cochesPrincipal.c cochesDatos.h
+	$(CC) $(CFLAGS) -c cochesPrincipal.c
+
+cochesDatos.o: cochesDatos.c cochesDatos.h
+	$(CC) $(CFLAGS) -c cochesDatos.c
+
+#ejecuta coches
+run_coches: coches coche_fichero.txt
+	./coches cohes.dat
+
+borra: coches cochesPrincipal.o cochesDatos.o
+	rm -r coches cochesDatos.o cochesPrincipal.o

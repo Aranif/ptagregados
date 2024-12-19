@@ -1,0 +1,15 @@
+#makefile 3 del ejercicio 3 (practica 7)
+
+CC = gcc -Wall -Wextra -g
+
+pruebaListaSimple: pruebaListaSimple.o listaSimple.o listaSimple.h
+		   $(CC) -o pruebaListaSimple pruebaListaSimple.o listaSimple.o
+
+pruebaListaSimple.o: pruebaListaSimple.c listaSimple.o listaSimple.h
+		     $(CC) -c pruebaListaSimple.c listaSimple.o
+
+listaSimple.o: listaSimple.c listaSimple.h
+	       $(CC) -c listaSimple.c listaSimple.h
+
+borra:
+	rm -r *.o *.c~ pruebaListaSimple
